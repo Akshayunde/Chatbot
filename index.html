@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel=styleshet" type="text/css" heref="style.css">
+    <script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<div>
+ <h1>
+     Flask Chatterbot Example
+ </h1>
+
+    <div>
+        <p class="botText"><span>Hi I am Chatterbot.</span></p>
+    </div>
+ <div id="userInput">
+     <input id="textInput" type="text" name="msg" placeholder="Message">
+     <input id="butttonInput" type="submit" value="Send">
+
+ </div>
+<script>
+    function getBotresponce(){
+    var rawText = $("#textInput".val():
+    var userHtml = '<p class="userText"><span>'+ rawText + '</span></p>';
+    $("#textInput".val("");
+    $("#chatbox").append(userHtml);
+    document.getElementById('usrInput').scrollIntoView((block: 'start', behavior: 'smooth'));
+    $.get("/get", ( msg: rawText )).done(function(data) (
+    var botHtml ='<p class="botText"><span>' + data + <'span></p>';
+    $("3chatbox").append(botHtml);
+    document.getElementById('userInput').scrollIntoView((block: 'start', behavior: 'smooth'));
+    ));
+    }
+    $("#textInput").keypress(function(e) {
+      if(e.which == 13) {
+            getBotResponse();
+            }
+            });
+</script>
+</div>
+
+</body>
+</html>
